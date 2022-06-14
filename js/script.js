@@ -1,9 +1,14 @@
-let base = prompt('Введите число');
-base = Number(base);
+let totalSalary = 0;
+let employees = 2;
 
-let baseNew = prompt('Введите степень');
-baseNew = Number(baseNew);
+for (let i = 1; i <= employees; i += 1) {
+    let salary = Math.round(Math.random() * (5000 - 500) + 500);
+   
+    console.log(`ЗП сотрудникаа ${i} - ${salary}`);
 
-let result = Math.pow(base, baseNew);
+    totalSalary += salary;
+    
+}
 
-console.log('Результат вычисления:', result);
+
+console.log('totalSalary:', totalSalary);

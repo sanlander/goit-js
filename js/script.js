@@ -1,47 +1,15 @@
-let totalSpent = 0;
-let payment = 5001;
-let discount = 0;
+// Напиши скрипт который переведёт значение totalMinutes (количество минут) в строку в формате часов и минут HH:MM.
 
-if (
-  (totalSpent >= 100 && totalSpent < 1000) ||
-  (totalSpent < 100 && payment > 5000)
-) {
-  discount = 0.02;
-  totalSpent += payment - payment * discount;
-  console.log(
-    `Оформляем зкаказ на сумму ${payment} грн. со скидкой ${discount * 100}%`
-  );
-  console.log(`Итого к оплате: ${payment - payment * discount} грн.`);
-  console.log(
-    `Сумма скидки: ${(payment - (payment - payment * discount)).toFixed(
-      2
-    )} грн.`
-  );
-} else if (totalSpent >= 1000 && totalSpent < 5000) {
-  discount = 0.05;
-  console.log(
-    `Оформляем зкаказ на сумму ${payment} грн. со скидкой ${discount * 100}%`
-  );
-  console.log(`Итого к оплате: ${payment - payment * discount} грн.`);
-  console.log(
-    `Сумма скидки: ${(payment - (payment - payment * discount)).toFixed(
-      2
-    )} грн.`
-  );
-} else if (totalSpent >= 5000) {
-  discount = 0.1;
-  console.log(
-    `Оформляем зкаказ на сумму ${payment} грн. со скидкой ${discount * 100}%`
-  );
-  console.log(`Итого к оплате: ${(payment -= payment * discount)} грн.`);
-  console.log(
-    `Сумма скидки: ${(payment - (payment - payment * discount)).toFixed(
-      2
-    )} грн.`
-  );
-} else {
-  console.log(
-    `Оформляем зкаказ на сумму ${payment} грн. со скидкой ${discount * 100}%`
-  );
-}
-console.log('totalSpent:', totalSpent);
+// 70 покажет 01:10
+// 450 покажет 07:30
+// 1441 покажет 24:01
+
+const totalMinutes = 80;
+
+const hours = Math.floor(totalMinutes / 60);
+const minutes = totalMinutes % 60;
+console.log(hours);
+console.log(minutes);
+console.log('Time:', `${String(hours).padStart(2, '0')}:${minutes}`);
+// const hours2 = String(hours).padStart(2, '0');
+// console.log(hours2);

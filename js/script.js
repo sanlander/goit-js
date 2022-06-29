@@ -207,14 +207,13 @@
 // function min(...rest) {
 //   let result = rest[0];
 //     for (const iterator of rest) {
-        
+
 //     if (iterator < result) {
 //       result = iterator;
 //     }
 //   }
 //   return result;
 // }
-
 
 // console.log(min(2, 5)); // 2
 // console.log(min(3, -1)); // -1
@@ -224,7 +223,7 @@
 
 // function getRectArea(dimensions) {
 //     const [a, b] = dimensions.split(' ');
-    
+
 //     return a * b;
 // }
 
@@ -238,7 +237,7 @@
 //     for (let i = 0; i < items.length; i += 1) {
 //         console.log(`${i + 1} - ${items[i]}`);
 //     }
-    
+
 // }
 
 // logItems(['Mango', 'Poly', 'Ajax']);
@@ -246,15 +245,194 @@
 
 // Напиши функцию printContactsInfo(names, phones) которая выводит в консоль имя и телефонный номер пользователя. В параметры names и phones будут переданы строки имен и телефонных номеров, разделенные запятыми. Порядковый номер имен и телефонов в строках указывают на соответствие. Количество имен и телефонов гарантированно одинаковое.
 
-function printContactsInfo(names, phones) {
-    const arrNames = names.split(',');
-    const arrPhones = phones.split(',');
-    for (let i = 0; i < arrNames.length; i += 1) {
-        console.log(`${arrNames[i].padEnd(8, ' ')}: ${arrPhones[i]}`);
-    }
-}
+// function printContactsInfo(names, phones) {
+//     const arrNames = names.split(',');
+//     const arrPhones = phones.split(',');
 
-printContactsInfo(
-  'Jacob,William,Solomon,Artemis',
-  '89001234567,89001112233,890055566377,890055566300',
-);
+//     let maxLengthName = 0;
+//     for (const iterator of arrNames) {
+//         if (iterator.length > maxLengthName) {
+//             maxLengthName = iterator.length;
+//         }
+//     }
+//     for (let i = 0; i < arrNames.length; i += 1) {
+//         console.log(
+//           `${arrNames[i].padEnd(maxLengthName+1, "-")}: ${arrPhones[i]}`
+//         );
+//     }
+// }
+
+// printContactsInfo(
+//   'Jacob,William,S222222olomon,Artemis,A123456789A',
+//   '89001234567,89001112233,890055566377,890055566300,380674552288'
+// );
+
+// Напиши функцию findLargestNumber(numbers)которая ищет самое большое число в массиве.
+
+// function findLargestNumber(numbers) {
+//     let maxNumber = numbers[0];
+//     for (const iterator of numbers) {
+//         if (iterator > maxNumber) {
+//             maxNumber = iterator;
+//         }
+//     }
+
+//     return maxNumber;
+// }
+
+// console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+// console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
+
+// Напишите функцию calAverage() которая принимает произвольное кол-во аргументов и возвращает их среднее значение. Все аругменты будут только числами.
+
+// function calAverage() {
+//     let calSum = 0;
+//     const calTotal = arguments.length;
+
+//     for (const iterator of arguments) {
+//         calSum += iterator;
+//     }
+//     return (calSum / calTotal).toFixed(2);
+// }
+
+// console.log(calAverage(1, 2, 3, 4)); // 2.5
+// console.log(calAverage(14, 8, 2)); // 8
+// console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
+// Напиши функцию formatTime(minutes) которая переведёт значение minutes (количество минут) в строку в формате часов и минут HH:MM.
+
+// function formatTime(minutes) {
+//     let timeMinute = String(minutes % 60).padStart(2, 0);
+//     let timeHours = String(Math.floor(minutes / 60)).padStart(2, 0);
+
+//     return `${timeHours}:${timeMinute}`;
+// }
+
+// console.log(formatTime(70)); // "01:10"
+// console.log(formatTime(450)); // "07:30"
+// console.log(formatTime(1441)); // "24:01"
+
+// Напишите функции для работы с коллекцией обучающих курсов courses:
+
+// addCourse(name) - добавляет курс в конец коллекции
+// removeCourse(name) - удаляет курс из коллекции
+// updateCourse(oldName, newName) - изменяет имя на новое
+
+// const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL", "Express"];
+
+// function removeCourse(name) {
+
+//   courses.includes(name)
+//     ? courses.splice(courses.indexOf(name), 1)
+//     : console.log("Курс с таким имененем не найден");
+// }
+
+// addCourse("Express");
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+// addCourse("CSS"); // 'У вас уже есть такой курс'
+
+// removeCourse('React');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// removeCourse('Vue'); // 'Курс с таким имененем не найден'
+
+// const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL", "Express"];
+
+// function updateCourse(oldName, newName) {
+
+//     courses.includes(oldName)
+//       ? courses.splice(courses.indexOf(oldName), 1, newName)
+//       : courses.push(oldName, newName);
+// }
+
+// updateCourse('Express2', 'NestJS');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
+
+// function findLongestWord(text) {
+//     const arrWords = text.split(' ');
+//     let maxLengthWord = arrWords[0];
+//     // console.log(arrWords);
+//     // console.log(maxLengthWord);
+
+//     for (const iterator of arrWords) {
+//         iterator.length > maxLengthWord.length
+//             ? maxLengthWord = iterator
+//             : '';
+//     }
+//     return maxLengthWord;
+// }
+
+// console.log(
+//   findLongestWord("I done it. But i can't understand how it works understand2")
+// );
+
+// const arr1 = [1, 2, 3, 4, 5, 6, 675];
+// const arr2 = [34, 54, 1, 456, 3, 675, 234, 87, 6];
+
+// function matchNumber(mass1, mass2) {
+//   const matchNumbers = [];
+//   for (const iterator of mass1) {
+//     mass2.includes(iterator) ? matchNumbers.push(iterator) : "";
+//   }
+//   return matchNumbers;
+// }
+
+// console.log(matchNumber(arr1, arr2));
+
+// const arr1 = [6, 1, 2, 3, 2, 4, 5, 1, 6, 2, 1, 8, 8, 2, 6, 8, 1]; // [1, 2]
+// const matchNumbers = [];
+
+// for (let i = 0; i < arr1.length; i += 1) {
+//     for (let x = i + 1; x < arr1.length; x += 1) {
+//          if (arr1[i] === arr1[x] && !matchNumbers.includes(arr1[i])) {
+//             matchNumbers.push(arr1[i]);
+
+//         }
+//     }
+// }
+// console.log(matchNumbers);
+
+const friends = [
+  { name: "Mango", online: false },
+  { name: "Kiwi", online: true },
+  { name: "Poly", online: true },
+  { name: "Ajax", online: false },
+];
+
+// function allFriends(friends) {
+//   const listFriendsOnline = [];
+//     for (const friend of friends) {
+//         if (!friend.online) {
+//             listFriendsOnline.push(friend)
+//         }
+//     }
+//     return listFriendsOnline;
+// }
+// console.log(allFriends(friends));
+
+// function allFriends(friends) {
+//     const listFriends = {
+//         online: [],
+//         offline: [],
+//     };
+
+//   for (const friend of friends) {
+//       if (friend.online) {
+//           listFriends.online.push(friend);
+//       } else {
+//           listFriends.offline.push(friend);
+//       }
+//   }
+//   return listFriends;
+// }
+// console.table(allFriends(friends));
+
+const x = {
+  a: 1,
+  b: 2,
+  c: 50,
+  d: 100,
+};
+
+let total = Object.keys(x);
+
+console.log(total.length);

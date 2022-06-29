@@ -391,12 +391,12 @@
 // }
 // console.log(matchNumbers);
 
-const friends = [
-  { name: "Mango", online: false },
-  { name: "Kiwi", online: true },
-  { name: "Poly", online: true },
-  { name: "Ajax", online: false },
-];
+// const friends = [
+//   { name: "Mango", online: false },
+//   { name: "Kiwi", online: true },
+//   { name: "Poly", online: true },
+//   { name: "Ajax", online: false },
+// ];
 
 // function allFriends(friends) {
 //   const listFriendsOnline = [];
@@ -426,13 +426,24 @@ const friends = [
 // }
 // console.table(allFriends(friends));
 
-const x = {
-  a: 1,
-  b: 2,
-  c: 50,
-  d: 100,
+// const x = {
+//   a: 1,
+//   b: 2,
+//   c: 50,
+//   d: 100,
+// };
+
+// let total = Object.keys(x);
+
+// console.log(total.length);
+const playlist = {
+  name: 'Мой плейлист!',
+  reyting: 3,
+  tracs: ['Трек-1', 'Трек-2', 'Трек-3'],
+  author: 'Моцарт',
 };
 
-let total = Object.keys(x);
+let { name, reyting, tracs, author = 'Не определен' } = playlist;
 
-console.log(total.length);
+reyting = 5;
+console.log(reyting);

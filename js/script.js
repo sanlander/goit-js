@@ -435,15 +435,98 @@
 
 // let total = Object.keys(x);
 
-// console.log(total.length);
-const playlist = {
-  name: 'Мой плейлист!',
-  reyting: 3,
-  tracs: ['Трек-1', 'Трек-2', 'Трек-3'],
-  author: 'Моцарт',
+// // console.log(total.length);
+// const playlist = {
+//   name: 'Мой плейлист!',
+//   reyting: 3,
+//   tracs: ['Трек-1', 'Трек-2', 'Трек-3'],
+//   author: 'Моцарт',
+// };
+
+// let { name, reyting, tracs, author = 'Не определен' } = playlist;
+
+// reyting = 5;
+// console.log(reyting);
+
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+// Change code below this line
+
+// function findMatches(firstArr, ...otherArgs) {
+//   const matches = []; // Don't change this line
+//   for (const number of otherArgs) {
+//     console.log(number);
+//     if (firstArr.includes(number)) {
+//       matches.push(number);
+//     }
+//   }
+
+//   // Change code above this line
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)); //[1, 2]
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+
+  addPotion(newPotion) {
+    const { name: nameNewPotion } = newPotion;
+    // console.log(Object.values(potions.name));
+
+    for (const iterator of this.potions) {
+      if (iterator.name === nameNewPotion) {
+        return `Error! Potion '${nameNewPotion}' is already in your inventory!`;
+      }
+    }
+    this.potions.push(newPotion);
+  },
+
+  removePotion(potionName) {
+    for (const iterator of this.potions) {
+      // console.log(iterator);
+      // console.log('----------------');
+      const potionIndex = this.potions.indexOf(iterator);
+      // console.log(potionIndex);
+      if (iterator.name === potionName) {
+        this.potions.splice(potionIndex, 1);
+        return;
+      }
+      
+    } return `Potion '${potionName}' is not in inventory!`;
+  },
+
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  // Change code above this line
 };
 
-let { name, reyting, tracs, author = 'Не определен' } = playlist;
+// console.log(atTheOldToad.addPotion({ name: 'Invisibility', price: 620 }));
 
-reyting = 5;
-console.log(reyting);
+console.log(atTheOldToad.removePotion('Speed 2 potion'));
+
+console.table(atTheOldToad.getPotions());

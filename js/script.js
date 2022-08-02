@@ -1,15 +1,14 @@
-const players = [
-    {id: 111, name: 'Vasa', balance: 105, online: true},
-    {id: 112, name: 'Peta', balance: 115, online: false},
-    {id: 113, name: 'Alla', balance: 20, online: true},
-];
-
-
-const onlineAndSorted = players
-        .filter(p => p.online)
-        .sort((a, b) => a.balance - b.balance)
-        ;
-
-        
-console.table(onlineAndSorted);
-
+// const refs = {
+//   parrentDiv: document.querySelector(".parrent"),
+// };
+// const onClick = (e) => {
+//   if (e.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+//   if (Number(e.target.dataset.but) === 1) {
+//     console.log("Yes!!! :-)");
+//   }
+//   console.log("target:", e.target.dataset.but);
+//   console.log("current target:", e.currentTarget);
+// };
+// refs.parrentDiv.addEventListener("click", onClick);

@@ -5,8 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS work space :)</title>
   </head>
-  <body style="">
+  <body style="text-align: center">
+    <form style="margin-bottom: 10px">
+      <label for="">
+        <span
+          style="color: rgb(14, 14, 54); font-weight: bold; margin-right: 10px"
+          >Введіть текст:</span
+        >
+
+        <input
+          style="border-radius: 4px; height: 30px; border: 2px solid green"
+          type="text"
+          name="text"
+          placeholder=" enter your text..."
+        />
+
+        <button
+          style="
+            height: 30px;
+            padding: 0px 12px;
+            background-color: rgba(71, 210, 222, 0.792);
+            border-radius: 4px;
+            border: 2px solid rgba(56, 56, 181, 0.792);
+            font-weight: 700;
+            color: tomato;
+          "
+          class="button submit"
+          type="submit"
+        >
+          + Нова задача
+        </button>
+      </label>
+      <br /><br />
+      <label for="">
+        <span
+          style="color: rgb(14, 14, 54); font-weight: bold; margin-right: 10px"
+          >Пошук:</span
+        >
+
+        <input
+          style="border-radius: 4px; height: 30px; border: 2px solid green"
+          class="input-search"
+          type="text"
+          name="text-search"
+          placeholder=" text for search..."
+        />
+      </label>
+    </form>
+
+    <p style="margin: 5px">Loading..</p>
+
+    <ul
+      style="margin: 0; list-style: none; display: inline-block"
+      class="todo-list"
+    ></ul>
+    <!-- <p>******************</p>
+
+    <div class="parrent" style="border: 1px solid tomato; padding: 5px">
+      <button type="button" data-but="1">Кнопка 1</button>
+      <button type="button">Кнопка 2</button>
+      <button type="button">Кнопка 3</button>
+      <button type="button">Кнопка 4</button>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="./js/script.js" type="module"></script>
+    <script src="./js/todo-list.js" type="module"></script>
   </body>
 </html>

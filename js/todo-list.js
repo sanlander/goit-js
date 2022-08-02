@@ -15,6 +15,11 @@ let item = [
     text: "Якщо нема пива, купить вина",
     isDone: true,
   },
+  {
+    id: (idItem += 1),
+    text: "Винести мусор",
+    isDone: true,
+  },
 ];
 
 const refs = {
@@ -22,7 +27,28 @@ const refs = {
   btnAdd: document.querySelector(".button.submit"),
   inputAddItem: document.querySelector('input[name="text"]'),
   inputSearch: document.querySelector(".input-search"),
+  inputSort: document.querySelector(".sort-item-todo"),
 };
+
+const sortListToDo = () => {
+  const sorted = (array) => {
+    refs.inputSearch.value = "";
+    const sortArr = array.map(todoNewItem).join("");
+
+    refs.todoList.innerHTML = "";
+    refs.todoList.insertAdjacentHTML("beforeend", sortArr);
+  };
+
+  switch (refs.inputSort.value) {
+    case "az":
+      return sorted([...item].sort((a, b) => a.text.localeCompare(b.text)));
+    case "za":
+      return sorted([...item].sort((a, b) => b.text.localeCompare(a.text)));
+    default:
+      return sorted([...item]);
+  }
+};
+refs.inputSort.addEventListener("change", sortListToDo);
 
 const searchFilter = () => {
   const searchFilterList = item.filter((x) =>
@@ -81,7 +107,7 @@ refs.todoList.addEventListener("click", clickDeleteToDoList);
 const addNewItem = (e) => {
   e.preventDefault();
 
-  if ((refs.inputAddItem.value.trim().length) === 0) {
+  if (refs.inputAddItem.value.trim().length === 0) {
     return;
   }
 

@@ -32,7 +32,7 @@
             "
             type="text"
             name="text"
-            placeholder=" enter your text..."
+            placeholder=" введіть текст..."
           />
 
           <button
@@ -66,7 +66,7 @@
           class="input-search"
           type="text"
           name="text-search"
-          placeholder=" text for search..."
+          placeholder=" текст для пошуку..."
         />
       </label>
 
@@ -74,7 +74,7 @@
         <span style="color: rgb(14, 14, 54); font-weight: bold; margin: 10px"
           >Сортування:</span
         >
-        <select
+        <select class="sort-item-todo"
           style="
             border-radius: 4px;
             height: 30px;
@@ -84,9 +84,10 @@
           name="select"
           id=""
         >
-          <option value="">виберіть значення</option>
-          <option value="">від А до Я</option>
-          <option value="">від Я до А</option>
+        
+          <option value="defoult">виберіть значення</option>
+          <option value="az">від А до Я</option>
+          <option value="za">від Я до А</option>
         </select>
       </label>
     </form>

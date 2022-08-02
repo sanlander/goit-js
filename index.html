@@ -7,35 +7,53 @@
   </head>
   <body style="text-align: center">
     <form style="margin-bottom: 10px">
-      <label for="">
-        <span
-          style="color: rgb(14, 14, 54); font-weight: bold; margin-right: 10px"
-          >Введіть текст:</span
-        >
+      <div style="background-color: rgb(131, 195, 232); padding: 8px;
+      width: 80%;
+      margin: 0 auto;
+      border-radius: 5px;">
+        <label for="">
+          <span
+            style="
+              color: rgb(14, 14, 54);
+              font-weight: bold;
+              margin-right: 10px;
+              font-size: 17px;
+            "
+            >Введіть текст:</span
+          >
 
-        <input
-          style="border-radius: 4px; height: 30px; border: 2px solid green"
-          type="text"
-          name="text"
-          placeholder=" enter your text..."
-        />
+          <input
+            style="
+              border-radius: 4px;
+              height: 40px;
+              border: 2px solid green;
+              font-size: 17px;
+              background-color: rgb(206, 236, 206);
+            "
+            type="text"
+            name="text"
+            placeholder=" enter your text..."
+          />
 
-        <button
-          style="
-            height: 30px;
-            padding: 0px 12px;
-            background-color: rgba(71, 210, 222, 0.792);
-            border-radius: 4px;
-            border: 2px solid rgba(56, 56, 181, 0.792);
-            font-weight: 700;
-            color: tomato;
-          "
-          class="button submit"
-          type="submit"
-        >
-          + Нова задача
-        </button>
-      </label>
+          <button
+            style="
+              height: 40px;
+              padding: 0px 12px;
+              margin: 5px;
+              background-color: rgba(39, 203, 10, 0.86);
+              border-radius: 4px;
+              border: 2px solid rgba(56, 56, 181, 0.792);
+              font-weight: 700;
+              font-size: 17px;
+              color: rgb(238, 246, 11);
+            "
+            class="button submit"
+            type="submit"
+          >
+            + Нова задача
+          </button>
+        </label>
+      </div>
       <br /><br />
       <label for="">
         <span
@@ -50,6 +68,26 @@
           name="text-search"
           placeholder=" text for search..."
         />
+      </label>
+
+      <label for="">
+        <span style="color: rgb(14, 14, 54); font-weight: bold; margin: 10px"
+          >Сортування:</span
+        >
+        <select
+          style="
+            border-radius: 4px;
+            height: 30px;
+            border: 2px solid green;
+            margin: 5px;
+          "
+          name="select"
+          id=""
+        >
+          <option value="">виберіть значення</option>
+          <option value="">від А до Я</option>
+          <option value="">від Я до А</option>
+        </select>
       </label>
     </form>
 

@@ -66,8 +66,8 @@ const searchFilter = () => {
 refs.inputSearch.addEventListener("input", searchFilter);
 
 const todoNewItem = ({ id, text, isDone = false }) =>
-  `<li style="background: silver;margin: 5px 0px; padding: 10px 30px;
-  border: 1px solid grey;
+  `<li style="background: silver; margin: 10px 0px; padding: 10px 30px;
+  border: 1px solid grey;   box-shadow: 5px -5px 3px 2px rgb(131 222 150);
   border-radius: 4px;  " class="todo-item" data-id="${id}">
     <input type="checkbox" name="todo-done" ${isDone ? "checked" : ""} />
     <span>${text}</span>

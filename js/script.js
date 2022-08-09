@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 let valueResult = 0;
 
 const refs = {
@@ -86,3 +87,48 @@ refs.btnRemove.addEventListener("click", () => {
   refs.resultString.innerHTML = "";
   valueResult = 0;
 });
+=======
+class Notes {
+  static Priority = {
+    LOW: 'low',
+    NORMAL: 'normal',
+    HIGH: 'high',
+  };
+
+  constructor(items = []) {
+    this.items = items;
+  }
+
+  addNote(note) {
+    this.items.push(note);
+  }
+
+  removeNote(text) {
+    this.items = this.items.filter(x => x.text !== text);
+  }
+
+  updateNote(text, newPriority) {
+    this.items = this.items.map(x => (x.text === text ? {
+      ...x,
+      x.priority = newPriority,
+     } : x ));
+  }
+}
+
+const myNotes = new Notes([]);
+
+myNotes.addNote({ text: 'Моя первая заметка', priority: Notes.Priority.LOW });
+
+console.log(myNotes.items);
+
+myNotes.addNote({
+  text: 'Моя вторая заметка',
+  priority: Notes.Priority.NORMAL,
+});
+console.log(myNotes.items);
+myNotes.removeNote('Моя первая заметка');
+console.log(myNotes.items);
+
+myNotes.updateNote('Моя вторая заметка', Notes.Priority.NORMAL);
+console.log(myNotes.items);
+>>>>>>> Stashed changes
